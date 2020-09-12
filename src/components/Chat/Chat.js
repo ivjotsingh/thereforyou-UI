@@ -4,6 +4,7 @@ import io, { Socket } from 'socket.io-client';
 
 import './Chat.css'
 
+let socket;
 
 const Chat = ({ location }) => {
 
@@ -18,10 +19,11 @@ const Chat = ({ location }) => {
         // use props or redux insted
         const {name, companion} = queryString.parse(location.search);
 
-        let socket = io(ENDPOINT)
+        socket = io(ENDPOINT)
 
         setName(name);
         setCompanion(companion);
+
 
     }, [ENDPOINT, location.search])
 
