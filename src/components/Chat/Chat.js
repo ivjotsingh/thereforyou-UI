@@ -24,6 +24,10 @@ const Chat = ({ location }) => {
         setName(name);
         setCompanion(companion);
 
+        socket.emit('join', {name: name, companion: companion}, () => {
+
+        });
+
 
     }, [ENDPOINT, location.search])
 
