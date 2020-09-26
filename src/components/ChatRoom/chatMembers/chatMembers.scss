@@ -1,0 +1,97 @@
+@import '../../../styles/variables.scss';
+
+.chat-room{
+    .ant-row{
+        align-items: stretch;
+        .ant-col{
+            border-right: 1px solid $border-color;
+            .chat-header{
+                height: 70px;
+                border-bottom: 1px solid $border-color;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 10px 20px;
+                .logo{
+                    width: 70px;
+                    img{
+                        width: 100%;
+                    }
+                }
+                .user-name{
+                    color: $primary-color;
+                    text-transform: capitalize;
+                }
+        
+            }
+            .chat-heading{
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 10px 20px;
+                .my-chats{
+                    font-size: 20px;
+                    font-weight: bold;
+                    color: #000;
+                }
+                .unread-count{
+                    span{
+                        background-color: #91d0cc;
+                        color: #fff;
+                        border-radius: 50%;
+                        width: 22px;
+                        height: 22px;
+                        display: inline-block;
+                        text-align: center;
+                        margin-right: 3px;
+                    }
+                }
+            }
+            .user-chats{
+                display: flex;
+                align-items: center;
+                padding: 10px 20px;
+                border-bottom: 1px solid $border-color;
+                .image{
+                    width: 60px;
+                    height: 60px;
+                    border-radius: 50%;
+                    overflow: hidden;
+                    img{
+                        width: 100%;
+                    }
+                }
+                .details{
+                    margin-left: 10px;
+                    flex-grow: 1;
+                    .flex{
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        .name{
+                            font-size: 18px;
+                            font-weight: bold;
+                            color: $secondary-color;
+                        }
+                        .time{
+                            font-size: 12px;
+                        }
+                    }
+                    .message{
+                        width: 262px;
+                        text-overflow: ellipsis;
+                        white-space: nowrap;
+                        overflow: hidden;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.test{
+    width: 100px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}

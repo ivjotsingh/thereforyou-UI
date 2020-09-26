@@ -1,0 +1,73 @@
+@import '../../../styles/variables.scss';
+
+.chats{
+    .chat-header{
+        .image{
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            overflow: hidden;
+            img{
+                width: 100%;
+            }
+        }
+        .actions{
+            .anticon{
+                font-size: 35px;
+                color: $primary-color;
+            }
+        }
+    }
+
+    .chat-section{
+        .chat-details{
+            display: flex;
+            width: 100%;
+            align-items: flex-end;
+
+            &.sender{
+                justify-content: flex-end;
+            }
+            .chat-message{
+                max-width: 45%;
+                padding: 10px;
+                margin: 10px;
+    
+                &.receiver-chat{
+                    background-color: $secondary-color;
+                    color: #fff;
+                    border-bottom-right-radius: 10px;
+                    border-top-right-radius: 10px;
+    
+                }
+    
+                &.sender-chat{
+                    background-color: $primary-color;
+                    border-bottom-left-radius: 10px;
+                    border-top-left-radius: 10px;
+                    justify-content: flex-end;
+                    color: $secondary-color;
+    
+                }
+            }
+            .time{
+                font-size: 12px;
+            }
+        }
+    }
+    .send-message{
+        position: fixed;
+        bottom: 0;
+        display: flex;
+        height: 70px;
+        align-items: center;
+        .add-item{
+            color: $primary-color;
+            font-size: 20px;
+            margin-right: 10px;
+        }
+        .ant-input{
+            width: 100%;
+        }
+    }
+}
