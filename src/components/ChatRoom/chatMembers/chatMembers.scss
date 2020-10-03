@@ -1,10 +1,17 @@
 @import '../../../styles/variables.scss';
 
 .chat-room{
+    ::-webkit-scrollbar {
+        width: 0px; 
+        background: transparent; 
+    }
     .ant-row{
-        align-items: stretch;
         .ant-col{
             border-right: 1px solid $border-color;
+            height: inherit;
+            &.chat-member-column{
+                overflow-y: scroll;
+            }
             .chat-header{
                 height: 70px;
                 border-bottom: 1px solid $border-color;

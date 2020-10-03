@@ -1,11 +1,19 @@
 import React from 'react'
 import './chatMembers.scss'
-import { Row, Col } from 'antd'
+import { Carousel } from 'antd'
 import Logo from '../../../images/logo.png'
-import {Data} from './config'
+import { Data } from './config'
+
 
 
 function chatMembers() {
+    const contentStyle = {
+        height: '160px',
+        color: '#fff',
+        lineHeight: '160px',
+        textAlign: 'center',
+        background: '#364d79',
+    };
     return (
         <div>
             <div className="chat-header">
@@ -43,6 +51,21 @@ function chatMembers() {
                     )
                 })
             }
+            <Carousel autoplay>
+                <div>
+                    <h3 style={contentStyle}>1</h3>
+                </div>
+                <div>
+                    <h3 style={contentStyle}>2</h3>
+                </div>
+                <div>
+                    <h3 style={contentStyle}>3</h3>
+                </div>
+                <div>
+                    <h3 style={contentStyle}>4</h3>
+                </div>
+            </Carousel>
+
         </div>
     )
 }
