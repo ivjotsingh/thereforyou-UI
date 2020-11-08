@@ -2,7 +2,7 @@ import React from 'react';
 import './App.scss'
 import Chat from './components/Chat/Chat';
 import Join from './components/Join/Join';
-import ChatRom from './components/ChatRoom/ChatRoom';
+import ChatRoom from './components/ChatRoom/ChatRoom';
 import 'antd/dist/antd.css';
 
 
@@ -13,7 +13,7 @@ const App = () => {
     <Router>
       <Route path="/" exact component={Join} />
       <Route path="/chat" component={Chat} />
-      <Route path='/chatRoom' component={ChatRom}/>
+      <Route path='/chatRoom' component={ChatRoom}/>
     </Router>
   );
 }
