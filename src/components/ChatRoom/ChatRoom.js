@@ -24,14 +24,14 @@ const Chat = ({ location }) => {
 
   useEffect(() => {
     const { name, topic } = queryString.parse(location.search);
+    const listener = "listener";
 
     socket = io(ENDPOINT);
 
     setTopic(topic);
     setName(name)
 
-    socket.emit('join', { name, topic }, (error) => {
-
+    socket.emit('join', { name, listener, room: topic }, (error) => {
         if(error) {
             alert(error);
         // call API to store user and create room
@@ -64,16 +64,14 @@ const Chat = ({ location }) => {
     <Row style={{height : window.innerHeight}}>
         <Col xs={24} sm={24} md={12} lg={6} xl={7} className="chat-member-column">
             <ChatMembers/>
-             Question online icon near hamburger menu 
         </Col>
         <Col xs={24} sm={24} md={12} lg={12} xl={13}>
             <InfoBar topic={topic} />
-            <Chats/>
-            <Messages messages={messages} name={name} />
-            <Input message={message} setMessage={setMessage} sendMessage={sendMessage} />
+            <Messages messages={messages} name={name}/>
+            <Chats message={message} setMessage={setMessage} sendMessage={sendMessage} />
         </Col>
         <Col xs={24} sm={24} md={12} lg={6} xl={4}>
-            <TextContainer users={users}/>
+            {/* <TextContainer users={users}/> */}
         </Col>
     </Row>
     </div>

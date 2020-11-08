@@ -71,8 +71,15 @@ class Chats extends React.Component {
                     <div className="add-item">
                         <PlusCircleOutlined />
                     </div>
-                    <Input type="text" placeholder="Feel free to share your thoughts here!"></Input>
-                    <Button>Click me</Button>
+                    
+                    <Input type="text"
+                        placeholder="Type a message..."
+                        value={this.propsmessage}
+                        onChange={({ target: { value } }) => this.props.setMessage(value)}
+                        onKeyPress={event => event.key === 'Enter' ? this.props.sendMessage(event) : null}>
+                    </Input>
+
+                    <Button onClick={e => this.props.sendMessage(e)}> Send</Button>
                 </div>
             </div>
         )
