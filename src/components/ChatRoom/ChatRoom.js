@@ -20,18 +20,18 @@ const Chat = ({ location }) => {
   const [users, setUsers] = useState('');
   const [message, setMessage] = useState('');
   const [messages, setMessages] = useState([]);
-  const ENDPOINT = 'http://localhost:5000';
+  const ENDPOINT = 'http://localhost:8000';
 
   useEffect(() => {
     const { name, topic } = queryString.parse(location.search);
-    const listener = "listener";
+    const userType = "member";
 
     socket = io(ENDPOINT);
 
     setTopic(topic);
     setName(name)
 
-    socket.emit('join', { name, listener, room: topic }, (error) => {
+    socket.emit('join', { name, userType, topic }, (error) => {
         if(error) {
             alert(error);
         // call API to store user and create room

@@ -38,7 +38,7 @@ class Chats extends React.Component {
                     {
                         Chat.map((item, index) => {
                             const { user, message, time } = item;
-                            if (user == 'receiver') {
+                            if (user === 'receiver') {
                                 return (
                                     <div className="chat-details" key={index}>
                                         <p className="receiver-chat chat-message">

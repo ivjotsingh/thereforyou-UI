@@ -1,24 +1,20 @@
 {
+<<<<<<< HEAD
   "name": "thereforyou-ui",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@ant-design/icons": "^4.2.2",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
-    "antd": "^4.6.4",
-    "node-sass": "^4.14.1",
     "query-string": "^6.13.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-emoji": "^0.5.0",
     "react-router": "^5.2.0",
     "react-router-dom": "^5.2.0",
-    "react-scripts": "^4.0.0",
+    "react-scripts": "3.4.3",
     "react-scroll-to-bottom": "^4.0.0",
-    "react-slick": "^0.27.11",
-    "slick-carousel": "^1.8.1",
     "socket.io-client": "^2.3.0"
   },
   "scripts": {
@@ -41,5 +37,29 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+=======
+  "name": "thereforyou-chat",
+  "version": "1.0.0",
+  "description": "anonymous chat application",
+  "main": "app.js",
+  "scripts": {
+    "test": "nodemon app.js",
+    "start": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github-p:ivjotsingh/thereforyou-chat.git"
+  },
+  "keywords": [
+    "chat"
+  ],
+  "author": "there-for-you-team",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "nodemon": "^2.0.4",
+    "socket.io": "^2.3.0"
+>>>>>>> 9f77272ef82fb9ef25447ad0fc861419f2ac8894
   }
 }

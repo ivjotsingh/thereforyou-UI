@@ -17,17 +17,17 @@ const Chat = ({ location }) => {
   const [users, setUsers] = useState('');
   const [message, setMessage] = useState('');
   const [messages, setMessages] = useState([]);
-  const ENDPOINT = 'http://localhost:5000';
+  const ENDPOINT = 'http://localhost:8000';
 
   useEffect(() => {
-    const { name, room } = queryString.parse(location.search);
+    const { name, topic } = queryString.parse(location.search);
 
     socket = io(ENDPOINT);
 
-    setRoom(room);
+    setRoom(topic);
     setName(name)
-
-    socket.emit('join', { name, room }, (error) => {
+    let userType = "Listener";
+    socket.emit('join', { name,userType, topic }, (error) => {
       if(error) {
         alert(error);
       }
