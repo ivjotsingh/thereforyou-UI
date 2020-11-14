@@ -31,12 +31,14 @@ const Chat = ({ location }) => {
     setTopic(topic);
     setName(name)
 
-    socket.emit('join', { name, userType, topic }, (error) => {
+    socket.emit('join', { name, userType, topic }, ({error, room_id}) => {
         if(error) {
             alert(error);
         // call API to store user and create room
-
+          
       }
+      console.log("room id ")
+      console.log(room_id)
     });
 
     socket.on("disconnect", ({userName, topic}) => {
@@ -72,9 +74,10 @@ const Chat = ({ location }) => {
 
   const sendMessage = (event) => {
     event.preventDefault();
-
+    console.log("message message")
+    console.log(message)
     if(message) {
-      socket.emit('sendMessage', message, () => setMessage(''));
+      socket.emit('sendMessage', {message}, () => setMessage(''));
     }
   }
 
