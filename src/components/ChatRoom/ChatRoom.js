@@ -38,7 +38,15 @@ const Chat = ({ location }) => {
 
       }
     });
+
+    socket.on("disconnect", ({userName, topic}) => {
+      console.log(userName)
+      console.log(topic)
+      
+      console.log("disconnected 1again")
+    });
   }, [ENDPOINT, location.search]);
+
   
   useEffect(() => {
     socket.on('message', message => {
@@ -49,6 +57,17 @@ const Chat = ({ location }) => {
     socket.on("roomData", ({ users }) => {
       setUsers(users);
     });
+
+    return () => {
+      socket.emit('disconnect', {'userName': name, topic}, (error) => {
+        console.log("calling disconnect")
+        console.log(name)
+        if(error) {
+          alert(error);
+    };
+      });
+      socket.off();
+    }
 }, []);
 
   const sendMessage = (event) => {
